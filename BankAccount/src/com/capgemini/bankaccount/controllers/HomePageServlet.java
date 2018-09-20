@@ -8,6 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.capgemini.bankaccount.dao.impl.CustomerDaoImpl;
+import com.capgemini.bankaccount.model.Customer;
 
 @WebServlet("/home")
 public class HomePageServlet extends HttpServlet {
@@ -17,9 +21,12 @@ public class HomePageServlet extends HttpServlet {
         super();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		System.out.println("home");
+		HttpSession session = request.getSession();
+		Customer cust  = (Customer) session.getAttribute("customer");
+		Customer customer = CustomerDaoImpl.updateSession(cust.getCustomerId());
+		request.getSession().setAttribute("customer", customer);	
 		RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
 		dispatcher.forward(request, response);
 	}

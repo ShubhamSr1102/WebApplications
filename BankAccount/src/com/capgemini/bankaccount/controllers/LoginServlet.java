@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 		response.setContentType("text/html");
 		try
 		{
-		long id = Integer.parseInt(request.getParameter("id"));
+		long id = Long.parseLong(request.getParameter("id"));
 		String password = request.getParameter("password");
 		customer = new Customer();
 		customer.setCustomerId(id);
@@ -42,9 +42,9 @@ public class LoginServlet extends HttpServlet {
 		}
 		finally {
 		if(customer!=null) {
-			HttpSession session = request.getSession();
+			HttpSession session = request.getSession(false);
 			session.setAttribute("customer", customer);
-			RequestDispatcher requestdispatcher = request.getRequestDispatcher("home.jsp");
+			RequestDispatcher requestdispatcher = request.getRequestDispatcher("home");
 			requestdispatcher.forward(request,response);
 		}
 		}

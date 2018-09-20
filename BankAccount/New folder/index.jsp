@@ -11,29 +11,28 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>Welcome</title>
+    <title>Hello, world!</title>
   </head>
-  <body background="https://stmed.net/sites/default/files/piggy-bank-wallpapers-28809-5663057.png" class="mr-2">
-<!--   <meta charset = "ISO-8859-1"> -->
+  <body background="C:\Users\smiddeku\Documents\webapps-workspace\BankAccount\WebContent\Images\img2.jpg" class="mr-2">
     <nav class="navbar navbar-expand-lg navbar-dark bg-basic">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-        <img src="https://media.istockphoto.com/vectors/piggy-bank-icon-vector-id539127220" style="width: 90px; height: 90px" >
-        <h2>&nbsp;&nbsp;&nbsp;PIGGY BANK</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbgHVVHoPNtIV6IKdIRxIyD13HJ6OSw3wPDS_AC42KV5b0RAY02Q" style="width: 90px; height: 90px" >
+        <h2>&nbsp;&nbsp;&nbsp;BANK</h2>
         
     </div>
-<!--     <div class="d-flex flex-row-reverse"> -->
+    <div class="d-flex flex-row-reverse">
       
-<!--     </div> -->
+    </div>
 </nav>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<!--     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> -->
-<!--         <span class="navbar-toggler-icon"></span> -->
-<!--     </button> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -85,21 +84,21 @@
     <label for="exampleDropdownFormPassword2">Password</label>
     <input type="password" class="form-control" id="exampleDropdownFormPassword2" name="password" placeholder="Password">
   </div>
-<!--   <div class="form-check"> -->
-<!--     <input type="checkbox" class="form-check-input" id="dropdownCheck2">  -->
-<!--     <label class="form-check-label" for="dropdownCheck2"> -->
-<!--       Remember me -->
-<!--     </label> -->
-<!--   </div> -->
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+    <label class="form-check-label" for="dropdownCheck2">
+      Remember me
+    </label>
+  </div>
   <br>
-  <button type="submit" class="btn btn-primary btn-sm btn-block">Sign in</button>
+  <button type="submit" class="btn btn-primary">Sign in</button>
+
     <c:if test = "${requestScope.name==true }">
     <div class="alert alert-danger" role="alert">
     Invalid Credentials! Try again.
     </div>
-		
     </c:if>
-</form>
+ </form>
 </div>
 </div>
 </div>

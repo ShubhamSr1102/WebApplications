@@ -26,12 +26,12 @@ public class UpdatePasswordServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(false);
 		if (null == session.getAttribute("customer")) {
 
 			request.getRequestDispatcher("error.jsp").include(request, response);
 		} else {
-			RequestDispatcher requestdispatcher = request.getRequestDispatcher("updatePassword.jsp");
+			RequestDispatcher requestdispatcher = request.getRequestDispatcher("changePassword.jsp");
 			requestdispatcher.forward(request, response);
 		}
 	}

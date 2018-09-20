@@ -18,35 +18,29 @@
 <div class="row">
 <div class=" mx-auto  m-5">
 <div class="card" style="width: 21rem;">
-    <form action="updateProfile" class = p-4 method="post">
+    <form action="updateProfile" class = p-4>
   <div class="form-group">
     <label >Customer Id:</label>
-    <input type="number" class="form-control" name="empId" readonly="readonly" value="${sessionScope.customer.customerId}">
+    <input type="number" class="form-control" name="name" readonly="readonly" value="${sessionScope.customer.customerId}">
   </div>
   <div class="form-group">
     <label >Username:</label>
-    <input type="text" class="form-control" name="empName" readonly="readonly" value="${sessionScope.customer.customerName}">
+    <input type="text" class="form-control" name="name" readonly="readonly" value="${sessionScope.customer.customerName}">
   </div>
   <div class="form-group">
     <label >Email address:</label>
-    <input type="email" class="form-control" maxlength="21" name="email" value="${sessionScope.customer.customerEmail}">
+    <input type="email" class="form-control" name="email" value="${sessionScope.customer.customerEmail}">
   </div>
   <div class="form-group">
     <label >Address:</label>
-    <input type="text" class="form-control" maxlength="20" name="address" value="${sessionScope.customer.customerAddress}">
+    <input type="text" class="form-control" name="address" value="${sessionScope.customer.customerAddress}">
   </div>
    <div class="form-group">
     <label >Date-Of-Birth:</label>
     <input type="date" class="form-control" name="dob" value="${sessionScope.customer.customerDateOfBirth}">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
-  <c:if test = "${requestScope.profileupdate==false }">
-    <div class="alert alert-danger" role="alert">
-    Something went wrong! Profile not updated.
-    </div>
-    </c:if>
 </form>
-
 </div>
 </div>
 </div>

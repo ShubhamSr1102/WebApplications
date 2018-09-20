@@ -22,7 +22,7 @@ public class EditProfileServlet extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html");
 
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(false);
 
 		if (null == session.getAttribute("customer")) {
 

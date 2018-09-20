@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="ISO-8859-1">
@@ -18,15 +17,15 @@
 </body>
 <div class=" mx-auto  m-5" align="center">
 <div class="card" style="width: 50rem;">
-<form action="fundTransferMethod" method="post">
+<form action="" method="post">
   <div class="form-row">
     <div class="form-group col-md-6 ">
       <label >Sender's Account Id</label>
-      <input type="number" class="form-control" name="fromAcc" value="${sessionScope.customer.account.accountId }" readonly="readonly">
+      <input type="number" class="form-control" name="fromacc" value="${sessionScope.customer.account.accountId }" readonly="readonly">
     </div>
     <div class="form-group col-md-6">
       <label >Receiver's Account Id</label>
-      <input type="number" class="form-control" name="toAcc" placeholder="Account Id">
+      <input type="number" class="form-control" name="toacc" placeholder="Account Id">
     </div>
   </div>
   <div class="form-group">
@@ -36,28 +35,5 @@
   <button type="submit" class="btn btn-primary">Transfer</button>
 </form>
 </div>
-<br>
-<div class="card" style="width: 50rem;">
-<c:if test = "${requestScope.success==true }">
-    <div class="alert alert-success" role="alert">
-    Money Transfered. Balance updated!
-    </div>
-    </c:if>
-    <c:if test = "${requestScope.negativeamount==true }">
-    <div class="alert alert-danger" role="alert">
-    Invalid amount! Amount cannot be negative.
-    </div>
-    </c:if>
-    <c:if test = "${requestScope.insufficientbalance==true }">
-    <div class="alert alert-danger" role="alert">
-    Insufficient balance!
-    </div>
-    </c:if>
-    <c:if test = "${requestScope.accountnotfound==true }">
-    <div class="alert alert-danger" role="alert">
-    Invalid Recipient!
-    </div>
-    </c:if>
-    </div>
 </div>
 </html>
